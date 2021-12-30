@@ -1,6 +1,6 @@
 {
   "name": "validate-custom-elements-manifest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Validate custom elements manifest(`custom-elements.json`) against the official schema",
   "type": "module",
   "exports": "./dist/main.js",
