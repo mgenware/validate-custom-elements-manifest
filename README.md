@@ -1,6 +1,10 @@
 # validate-custom-elements-manifest
 
-Validate custom elements manifest(`custom-elements.json`) against the official schema.
+[![Build Status](https://github.com/mgenware/validate-custom-elements-manifest/workflows/Build/badge.svg)](https://github.com/mgenware/validate-custom-elements-manifest/actions)
+[![npm version](https://img.shields.io/npm/v/validate-custom-elements-manifest.svg?style=flat-square)](https://npmjs.com/package/validate-custom-elements-manifest)
+[![Node.js Version](http://img.shields.io/node/v/validate-custom-elements-manifest.svg?style=flat-square)](https://nodejs.org/en/)
+
+Validate custom elements manifest(`custom-elements.json`) against the official schema. Useful for validating your manifest file before publishing.
 
 ## Installation
 
@@ -10,4 +14,6 @@ npm i -g validate-custom-elements-manifest
 
 ## Usage
 
-After installing this package, instead of `npm run r <script>`, you can simply do `dz <script>` to run daizong scripts.
+```sh
+npx validate-custom-elements-manifest [schema-file] # Defaults to `custom-elements.json`.
+```
