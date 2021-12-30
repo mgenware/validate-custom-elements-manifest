@@ -1,21 +1,7 @@
 #!/usr/bin/env node
 import { promises as fsPromises } from 'fs';
 import Ajv from 'ajv';
-import np from 'path';
-import { fileURLToPath } from 'url';
-
-const dirname = np.dirname(fileURLToPath(import.meta.url));
-const schemaFile = np.resolve(dirname, '../node_modules/custom-elements-manifest/schema.json');
-
-async function readSchema() {
-  try {
-    const jsonText = await fsPromises.readFile(schemaFile, 'utf8');
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return JSON.parse(jsonText);
-  } catch (err) {
-    throw new Error(`Error reading schema file at "${schemaFile}": ${(err as Error).message}`);
-  }
-}
+import schema from 'custom-elements-manifest-esm-obj';
 
 async function readManifest(file: string) {
   try {
@@ -32,7 +18,7 @@ async function readManifest(file: string) {
     const args = process.argv.slice(2);
     const inputFile = args[0] || 'custom-elements.json';
     const ajv = new Ajv();
-    const validate = ajv.compile(await readSchema());
+    const validate = ajv.compile(schema);
     if (!validate(await readManifest(inputFile))) {
       console.error(`Schema validation of file "${inputFile}" failed`);
       console.error(validate.errors);
