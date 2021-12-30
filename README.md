@@ -9,5 +9,5 @@ Validate custom elements manifest(`custom-elements.json`) against the official s
 ## Usage
 
 ```sh
-npx validate-custom-elements-manifest [schema-file] # Defaults to `custom-elements.json`.
+npx -y validate-custom-elements-manifest [schema-file] # Defaults to `custom-elements.json`.
 ```
