@@ -10,6 +10,7 @@ const schemaFile = np.resolve(dirname, '../node_modules/custom-elements-manifest
 async function readSchema() {
   try {
     const jsonText = await fsPromises.readFile(schemaFile, 'utf8');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return JSON.parse(jsonText);
   } catch (err) {
     throw new Error(`Error reading schema file at "${schemaFile}": ${(err as Error).message}`);
@@ -19,7 +20,7 @@ async function readSchema() {
 async function readManifest(file: string) {
   try {
     const jsonText = await fsPromises.readFile(file, 'utf8');
-    return JSON.parse(jsonText);
+    return JSON.parse(jsonText) as unknown;
   } catch (err) {
     throw new Error(`Error reading file "${file}": ${(err as Error).message}`);
   }

@@ -25,6 +25,7 @@ async function t(file: string | null, error: string | null): Promise<void> {
     actualValid = false;
     assert.ok(error);
     assert.ok(err.stderr);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     assert.ok(err.stderr.includes(error));
   }
   assert.strictEqual(actualValid, !error);
