@@ -6,12 +6,6 @@
 
 Validate custom elements manifest(`custom-elements.json`) against the official schema. Useful for validating your manifest file before publishing.
 
-## Installation
-
-```sh
-npm i -g validate-custom-elements-manifest
-```
-
 ## Usage
 
 ```sh
