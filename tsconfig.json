@@ -1,0 +1,6 @@
+{
+  "extends": "mgenware-tsconfig-node",
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
+}
